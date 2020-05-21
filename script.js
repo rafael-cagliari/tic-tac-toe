@@ -10,16 +10,27 @@ for (let i=0; i < tic_tac_buttons.length; ++i){
     tic_tac_buttons[i].innerText=Object.values(board[i])}};
 } ;
 
-
+//makes an array using the board that returns true for every X ou O depending on the player
+//then compares the array to the possible winning combinations
 const checkWin = () =>{
-    if(player == 1){
-    if(player1.moves.includes('zero' && 'one' && 'two') || player1.moves.includes('zero' && 'four' && 'eight') || player1.moves.includes('zero' &&'three'&&'six') ||
-    player1.moves.includes('one' && 'four' && 'seven') || player1.moves.includes('two'&&'four'&&'six')||player1.moves.includes('two'&&'five'&&'eight')|| player1.moves.includes('three' && 'four' &&'five')||
-    player1.moves.includes('six'&&'seven'&&'eight')==true){
-        console.log(player1.name + ' wins')
-    } 
-    }
-}; 
+        array = []
+        for (let i = 0; i<board.length ; ++i){
+            if(player==1){
+                if(Object.values(board[i])=='X'){
+                    array.push(true)}
+                else{array.push(false)}}
+            else{
+                if(Object.values(board[i])=='O'){
+                    array.push(true)}
+                else{array.push(false)}
+                }}
+            if((array[0] && array[1] && array[2])||(array[0] && array[4] && array[8])||
+            (array[0] && array[3] && array[6]) || (array[1] && array[4] && array[7])||
+            (array[2] && array[4] & array[6])||(array[2] && array[5] && array[8])||
+            (array[3] && array[4] && array[5])|| (array[6] && array[7] && array[8])==true){
+                if(player==1){console.log(player1.name + ' wins')}
+                else{console.log(player2.name + ' wins')};
+    }} 
 
 const playerGenerator = (name, moves, wins)=>{
     return { name, moves, wins };
@@ -52,7 +63,7 @@ const x_or_round=(elmnt)=> {
     for (let i=0; i<board.length ; ++i){
         if(Object.keys(board[i])==element){
             if (Object.values(board)[i][element] == '1' || Object.values(board)[i][element] == '2'){return}
-            Object.values(board)[i][element] = '1'
+            Object.values(board)[i][element] = 'X'
             player1.moves.push(element)
         }
     }}
@@ -60,12 +71,13 @@ const x_or_round=(elmnt)=> {
         for (let i=0; i<board.length ; ++i){
             if(Object.keys(board[i])==element){
                 if (Object.values(board)[i][element] == '1' || Object.values(board)[i][element] == '2'){return}
-                Object.values(board)[i][element] = '2'
+                Object.values(board)[i][element] = 'O'
                 player2.moves.push(element)
             }
         }
     }
     gameBoardRender()
+    checkWin()
     playerTurnSwitcher()
     };
 
@@ -85,5 +97,4 @@ document.getElementById('start_game').addEventListener('click', function(){
     };
 });
 
-let numeros = [0,1,2,3,4,5,6]
-numeros.includes((0 && 1 && 2) || (5 && 8))
+
