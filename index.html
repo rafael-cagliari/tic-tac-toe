@@ -17,14 +17,16 @@
 </div>
 <div>Player name</div>
 <form>
-	<input type='text' id='player1_name' value='Rafael' placeholder="Plyer 1" maxlength="25">
-	<input type='text' id='player2_name' value='Daniel' placeholder="Player 2" maxlength="25">
+	<input type='text' id='player1_name'  placeholder="Plyer 1" maxlength="25">
+	<input type='text' id='player2_name'  placeholder="Player 2" maxlength="25">
 </form>
-<button id=start_game>Start Game</button>
-<button id=restart_match onclick="gameFlow().restart()">Restart</button>
+<button id=start_game onclick="startGame()">Start Game</button>
+<button id=restart_match onclick="gameFlow().restart()">Restart Match</button>
+<button id=new_game onclick='gameFlow().newGame()'>New Game</button>
 <div>
 	<div id=turn></div>
 	<div id=score></div>
+	<div id=match_result></div>
 </div>
 	<body>
 <script type="text/javascript" src='script.js'></script>
