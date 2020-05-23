@@ -33,12 +33,14 @@ const checkWin = () =>{
             (array[0] && array[3] && array[6]) || (array[1] && array[4] && array[7])||
             (array[2] && array[4] & array[6])||(array[2] && array[5] && array[8])||
             (array[3] && array[4] && array[5])|| (array[6] && array[7] && array[8])==true){
-                if(player==1){document.getElementById('match_result').innerText = player1.name + ' wins'; player1.wins += 1; player1.winner='win'; gameFlow().restart()}
-                else{document.getElementById('match_result').innerText = player2.name + ' wins'; player2.wins += 1;player2.winner='win'; gameFlow().restart()}};
+                if(player==1){document.getElementById('match_result').innerText = player1.name + ' wins'; player1.wins += 1;
+                 player1.winner='win';setTimeout(() => {  gameFlow().restart(); }, 2000);}
+                else{document.getElementById('match_result').innerText = player2.name + ' wins'; player2.wins += 1;player2.winner='win'; 
+                setTimeout(() => {  gameFlow().restart(); }, 2000);}};
             if(newBoard.number_of_plays==9){
                 console.log('its a draw')
                 document.getElementById('match_result').innerText = "It's a draw!";
-                gameFlow().restart();
+                setTimeout(() => {  gameFlow().restart(); }, 2000);
             }
 } 
 
@@ -131,19 +133,16 @@ const startSwitch=(on_off)=>{
 //start game creates 2 player objects with the names from the form on the html file 
 const startGame= ()=>{
     if(start_switch.on_off=='on'){return};
-    start_switch.on_off='on';
     if(document.getElementById('player1_name').value== '' && (document.getElementById('player2_name').value== '')){
-        console.log('You must pick a name for both players');
-        return;
-    }
-    else{
-        gameFlow().setPlayers();
-        gameFlow().turnDisplay();
-        document.getElementById('score').innerText=`${player1.name}: ${player1.wins} | ${player2.name}: ${player2.wins}`
-    };  
+        alert('You must pick a name for both players');
+        return;}
+    start_switch.on_off='on';
+    
+    gameFlow().setPlayers();
+    gameFlow().turnDisplay();
+    document.getElementById('score').innerText=`${player1.name}: ${player1.wins} | ${player2.name}: ${player2.wins}`
 };
 let start_switch = startSwitch('off');
 
 let newBoard = boardFunctions().boardCreator([{'zero':''},{'one':''},{'two':''},{'three':''},{'four':''},{'five':''},
 {'six':''},{'seven':''},{'eight':''}], 0)
-

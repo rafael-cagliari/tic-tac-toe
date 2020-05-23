@@ -3,22 +3,25 @@
 <head>
 	<title>Tic Tac Toe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
 </head>
+<div id='parent' class='parent'>
 <div class='board'>
-	<button id='zero' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
-	<button id='one' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
-	<button id='two' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
-	<button id='three' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='zero' style='border-top-left-radius: 20px;'onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='one'  onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='two' style='border-top-right-radius: 20px;' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='three'  onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
 	<button id='four' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
-	<button id='five' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
-	<button id='six' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
-	<button id='seven' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
-	<button id='eight' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='five'  onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='six' style='border-bottom-left-radius: 20px;' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='seven'  onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+	<button id='eight' style='border-bottom-right-radius: 20px;' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
+</div>
 </div>
 <div>Player name</div>
 <form>
-	<input type='text' id='player1_name'  placeholder="Plyer 1" maxlength="25">
-	<input type='text' id='player2_name'  placeholder="Player 2" maxlength="25">
+	<input type='text' id='player1_name' value='Rafael' placeholder="Plyer 1" maxlength="25">
+	<input type='text' id='player2_name' value='Daniel' placeholder="Player 2" maxlength="25">
 </form>
 <button id=start_game onclick="startGame()">Start Game</button>
 <button id=restart_match onclick="gameFlow().restart()">Restart Match</button>
