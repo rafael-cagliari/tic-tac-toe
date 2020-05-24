@@ -1,3 +1,7 @@
+form{
+    display: flex;
+}
+
 body{
     background-color: rgb(26, 26, 26);
 }
@@ -20,7 +24,7 @@ body{
     border-style: solid;
     border-width: 2px;
     box-shadow: 0px 1px 20px 0px #f3b7b7;
-    transition: 0.5s;
+    transition: 0.25s;
     font-family: 'Chelsea Market';
     color: #ffd8d8;
     font-size: 36px;
@@ -29,3 +33,50 @@ body{
 .tic-tac-button:hover{
     transform: scale(0.9);
 }
+.name-form{
+color: #d8ffff;
+    background-color: rgb(26, 26, 26);
+    border-style: solid;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    margin:20px;
+    padding-left: 4px;
+}
+.console{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons, .name-form{
+    display: flex;
+    justify-content: center;
+}
+
+.action-buttons {
+    color: #d7fdfe;
+    margin: 10px;
+    padding: 7px;
+    border-radius: 5px;
+    font-family: consolas;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(26, 26, 26, 1);
+    transition:0.2s;
+    letter-spacing: 3px;
+}
+
+.action-buttons:hover{
+    color: rgba(26, 26, 26, 1);
+    background-color: #d7fdfe;
+    box-shadow: 0 0 10px #d7fdfe, 0 0 40px #d7fdfe, 0 0 70px #d7fdfe;
+}
+
+.display{
+    text-align: center;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #d7fdfe;
+}
+

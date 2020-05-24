@@ -4,7 +4,11 @@
 	<title>Tic Tac Toe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+<div id=score style='text-align: center;
+font-family: "Press Start 2P", cursive;font-size: 21px;margin: 20px;color: #d8ffff;text-shadow: -2px -1px 14px #ecffd8;
+'> Player 1: 0 | Player 2: 0 </div>
 <div id='parent' class='parent'>
 <div class='board'>
 	<button id='zero' style='border-top-left-radius: 20px;'onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
@@ -18,19 +22,22 @@
 	<button id='eight' style='border-bottom-right-radius: 20px;' onclick="gameFlow().x_or_round(this)" class='tic-tac-button'></button>
 </div>
 </div>
-<div>Player name</div>
+<div class = 'buttons'>
 <form>
-	<input type='text' id='player1_name' value='Rafael' placeholder="Plyer 1" maxlength="25">
-	<input type='text' id='player2_name' value='Daniel' placeholder="Player 2" maxlength="25">
-</form>
-<button id=start_game onclick="startGame()">Start Game</button>
-<button id=restart_match onclick="gameFlow().restart()">Restart Match</button>
-<button id=new_game onclick='gameFlow().newGame()'>New Game</button>
-<div>
-	<div id=turn></div>
-	<div id=score></div>
-	<div id=match_result></div>
+	<input type='text' id='player1_name' class='name-form' placeholder="Player 1" maxlength="25">
+	<input type='text' id='player2_name' class='name-form' placeholder="Player 2" maxlength="25">
 </div>
+<div class = 'buttons'>
+</form>
+<div class='buttons'>
+<button id=start_game class='action-buttons' onclick="startGame()">Start Game</button>
+<button id=restart_match class='action-buttons' onclick="gameFlow().restart()">Restart Match</button>
+<button id=new_game class='action-buttons' onclick='gameFlow().newGame()'>New Game</button>
+</div>
+</div>
+	<div class='display' id=turn style='text-align: center;'></div>
+	<div class='display' id=match_result style='text-align: center;'></div>
+
 	<body>
 <script type="text/javascript" src='script.js'></script>
 </body>

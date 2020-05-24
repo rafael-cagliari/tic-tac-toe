@@ -34,13 +34,13 @@ const checkWin = () =>{
             (array[2] && array[4] & array[6])||(array[2] && array[5] && array[8])||
             (array[3] && array[4] && array[5])|| (array[6] && array[7] && array[8])==true){
                 if(player==1){document.getElementById('match_result').innerText = player1.name + ' wins'; player1.wins += 1;
-                 player1.winner='win';setTimeout(() => {  gameFlow().restart(); }, 2000);}
+                 player1.winner='win';setTimeout(() => {  gameFlow().restart(); }, 1000);}
                 else{document.getElementById('match_result').innerText = player2.name + ' wins'; player2.wins += 1;player2.winner='win'; 
-                setTimeout(() => {  gameFlow().restart(); }, 2000);}};
+                setTimeout(() => {  gameFlow().restart(); }, 1000);}};
             if(newBoard.number_of_plays==9){
                 console.log('its a draw')
                 document.getElementById('match_result').innerText = "It's a draw!";
-                setTimeout(() => {  gameFlow().restart(); }, 2000);
+                setTimeout(() => {  gameFlow().restart(); }, 1000);
             }
 } 
 
@@ -99,6 +99,7 @@ const x_or_round=(elmnt)=> {
     
 
 const restart = () =>{
+    if(typeof player1==='undefined'){return};
     start_switch.on_off='on';
     newBoard.board = [{'zero':''},{'one':''},{'two':''},{'three':''},{'four':''},{'five':''},
     {'six':''},{'seven':''},{'eight':''}];
@@ -108,6 +109,7 @@ const restart = () =>{
     boardFunctions().gameBoardRender()}
 
 const newGame = () =>{
+    if(typeof player1==='undefined'){return};
     restart();
     start_switch.on_off='off'
     startGame();
@@ -115,8 +117,8 @@ const newGame = () =>{
 
 const turnDisplay= () =>{
     if(player==1){
-    document.getElementById('turn').innerText=`it is ${player1.name}'s turn`}
-    else {document.getElementById('turn').innerText=`it is ${player2.name}'s turn`}
+    document.getElementById('turn').innerText=`It is ${player1.name}'s turn`}
+    else {document.getElementById('turn').innerText=`It is ${player2.name}'s turn`}
 }
 
 const scoreDisplay=()=>{
